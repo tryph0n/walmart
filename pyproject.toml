@@ -1,0 +1,28 @@
+[project]
+name = "walmart-sales-prediction"
+version = "1.0.0"
+description = "Walmart weekly sales prediction using linear and regularized regression"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "plotly>=5.18.0",
+    "scikit-learn>=1.3.0",
+    "jupyter>=1.0.0",
+    "nbformat>=5.9.0",
+    "kaleido>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
