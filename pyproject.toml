@@ -3,7 +3,9 @@ name = "walmart-sales-prediction"
 version = "1.0.0"
 description = "Walmart weekly sales prediction using linear and regularized regression"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
+authors = [{ name = "Samy Saad" }]
+license = "MIT"
 dependencies = [
     "pandas>=2.0.0",
     "numpy>=1.24.0",
@@ -14,15 +16,24 @@ dependencies = [
     "kaleido>=1.2.0",
 ]
 
-[project.optional-dependencies]
+[project.urls]
+Repository = "https://github.com/tryph0n/walmart"
+
+[dependency-groups]
 dev = [
-    "ruff>=0.1.0",
+    "ruff==0.15.0",
+    "pytest>=9.0.3",
 ]
 
 [tool.ruff]
 line-length = 88
-target-version = "py310"
+target-version = "py313"
+extend-exclude = ["*.ipynb"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
 ignore = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
